@@ -1,0 +1,9 @@
+[submodule "sistema-contable-las-acacias-backend"]
+	path = sistema-contable-las-acacias-backend
+	url = https://github.com/nahum-martinez/sistema-contable-las-acacias-backend.git
+[submodule "sistema-contable-las-acacias-adminpanel"]
+	path = sistema-contable-las-acacias-adminpanel
+	url = https://github.com/nahum-martinez/sistema-contable-las-acacias-adminpanel.git
+[submodule "sistema-contable-las-acacias-frontend"]
+	path = sistema-contable-las-acacias-frontend
+	url = https://github.com/nahum-martinez/sistema-contable-las-acacias-frontend.git

@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "sistema-contable-las-acacias-adminpanel"
+		},
+		{
+			"path": "sistema-contable-las-acacias-backend"
+		},
+		{
+			"path": "sistema-contable-las-acacias-frontend"
+		}
+	],
+	"settings": {}
+}

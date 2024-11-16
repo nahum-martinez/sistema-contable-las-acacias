@@ -1,0 +1,6 @@
+name: sistema-contable-las-acacias
+
+include:
+  - ./sistema-contable-las-acacias-backend/docker-compose.yml # declare service-bacend
+  - ./sistema-contable-las-acacias-frontend/docker-compose.yml # declare service-landigpage
+  - ./sistema-contable-las-acacias-adminpanel/docker-compose.yml # declare service-adminpanel
