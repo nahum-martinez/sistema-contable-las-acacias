@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "d8c22126-63c2-46cb-9c62-b1f5f5ec6d0b",
+		"name": "API-LAS-ACACIAS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2309272"
+	},
+	"item": [
+		{
+			"name": "01-Seguridad",
+			"item": []
+		},
+		{
+			"name": "02-Cuentas",
+			"item": [
+				{
+					"name": "01-NuevaCuenta-POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Caja Chica\",\r\n  \"codPadre\": 1101010\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}:{{PORT}}{{API-VERSION}}/catalogo-cuentas",
+							"host": [
+								"{{SERVER}}"
+							],
+							"port": "{{PORT}}{{API-VERSION}}",
+							"path": [
+								"catalogo-cuentas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02-TodasLasCuentas-GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}:{{PORT}}{{API-VERSION}}/catalogo-cuentas",
+							"host": [
+								"{{SERVER}}"
+							],
+							"port": "{{PORT}}{{API-VERSION}}",
+							"path": [
+								"catalogo-cuentas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02-ObtenerCtaPorCode-Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}:{{PORT}}{{API-VERSION}}/catalogo-cuentas/{{CODE_CTA}}/code",
+							"host": [
+								"{{SERVER}}"
+							],
+							"port": "{{PORT}}{{API-VERSION}}",
+							"path": [
+								"catalogo-cuentas",
+								"{{CODE_CTA}}",
+								"code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filterIfSelect",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/catalogo-cuentas?filter=true",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"catalogo-cuentas"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getbyCode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/catalogo-cuentas/:code/code",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"catalogo-cuentas",
+								":code",
+								"code"
+							],
+							"variable": [
+								{
+									"key": "code"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/catalogo-cuentas",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"catalogo-cuentas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createnew",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Caja corriente\",\n  \"codPadre\": 212\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/catalogo-cuentas",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"catalogo-cuentas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "03-LibroDiario",
+			"item": [
+				{
+					"name": "01-NuevoAsientoContable-POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fechaMovMaestro\": \"2024-11-17 01:34:24\",\r\n    \"userMovMaestro\": \"nahum.martinez\",\r\n    \"registroMovDiarios\": [\r\n        {\r\n            \"codCuenta\": 110101010,\r\n            \"conceptoMovDia\": \"test de prueba\",\r\n            \"fechaMovdia\": \"2024-11-17 01:34:24\",\r\n            \"debeMovDia\": 2000,\r\n            \"haberMovDia\": 0\r\n        },\r\n        {\r\n            \"codCuenta\": 110101011,\r\n            \"conceptoMovDia\": \"test de prueba 2\",\r\n            \"fechaMovdia\": \"2024-11-17 01:34:24\",\r\n            \"debeMovDia\": 3000,\r\n            \"haberMovDia\": 0\r\n        },\r\n        {\r\n            \"codCuenta\": 110101011,\r\n            \"conceptoMovDia\": \"test de prueba 3\",\r\n            \"fechaMovdia\": \"2024-11-17 01:34:24\",\r\n            \"debeMovDia\": 5000,\r\n            \"haberMovDia\": 0 \r\n        },\r\n        {\r\n            \"codCuenta\": 2,\r\n            \"conceptoMovDia\": \"test de prueba 3\",\r\n            \"fechaMovdia\": \"2024-11-17 01:34:24\",\r\n            \"debeMovDia\": 0,\r\n            \"haberMovDia\": 10000 \r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}:{{PORT}}{{API-VERSION}}/libro-diario",
+							"host": [
+								"{{SERVER}}"
+							],
+							"port": "{{PORT}}{{API-VERSION}}",
+							"path": [
+								"libro-diario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02-ObtenerTodosLosAsientosContables-Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}:{{PORT}}{{API-VERSION}}/libro-diario",
+							"host": [
+								"{{SERVER}}"
+							],
+							"port": "{{PORT}}{{API-VERSION}}",
+							"path": [
+								"libro-diario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02-ObtenerAsientoContablePorCod-Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER}}:{{PORT}}{{API-VERSION}}/libro-diario/{{CODE_MOV}}/code",
+							"host": [
+								"{{SERVER}}"
+							],
+							"port": "{{PORT}}{{API-VERSION}}",
+							"path": [
+								"libro-diario",
+								"{{CODE_MOV}}",
+								"code"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
