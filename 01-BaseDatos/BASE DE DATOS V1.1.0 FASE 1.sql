@@ -43,6 +43,23 @@ INSERT INTO catalogo_cuentas (cod_cuenta, nombre, cod_grupo, cod_padre,prioridad
 (5, 'Gastos', 5, NULL,0),
 (6, 'Costos', 6, NULL,0);
 
+-- FASE 1 TABLA DE USUARIOS
+
+CREATE TABLE usuarios (
+    id CHAR(36) PRIMARY KEY DEFAULT (UUID()),  
+    codigo VARCHAR(50) NOT NULL,
+    usuario VARCHAR(100) UNIQUE KEY NOT NULL ,                 
+    contrasenia VARCHAR(60) NOT NULL,               
+    nombres VARCHAR(100) NOT NULL,                  
+    apellidos VARCHAR(100) NOT NULL,                
+    fec_registro DATETIME DEFAULT CURRENT_TIMESTAMP, 
+    fec_modificacion DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
+    estado BOOLEAN DEFAULT TRUE,
+    correo_electronico VARCHAR(200)
+);
+
+-- FIN FASE 1
+
 
 -- LAS SUBCUENTAS IRAN ASOCIADAS CON CUENTAS Y TAMBIEN LAS SUBCUENTAS IRAN ASOCIADAS CON SUBCUENTA A DETALLE
 CREATE TABLE subcuentas (
