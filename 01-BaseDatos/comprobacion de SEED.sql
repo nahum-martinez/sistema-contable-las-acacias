@@ -1,0 +1,1 @@
+select cc.cod_grupo,cc.nombre,cc.fec_registro,cc.cod_padre,g.tip_naturaleza   from catalogo_cuentas cc, grupos g where g.cod_grupo =cc.cod_grupo ;
