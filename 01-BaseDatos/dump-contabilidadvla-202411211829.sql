@@ -160,7 +160,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES ('d1c14566-a7c8-11ef-bb4d-0242ac120002','USR-0001','admin','$2b$10$ujwCP0Hsk0dYTP5zaUFIH.wcsINDxkJ/xWu9IqpGpqt4idf1te17i','Admin','System','2024-11-21 05:24:02','2024-11-21 05:24:02',1,'admin@gmail.com');
+INSERT INTO `usuarios` VALUES ('d1c14566-a7c8-11ef-bb4d-0242ac120002','USER-0001','admin','$2b$10$ujwCP0Hsk0dYTP5zaUFIH.wcsINDxkJ/xWu9IqpGpqt4idf1te17i','Admin','System','2024-11-21 05:24:02','2024-11-21 05:24:02',1,'admin@gmail.com');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
