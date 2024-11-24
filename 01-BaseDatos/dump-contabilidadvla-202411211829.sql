@@ -19,6 +19,28 @@
 -- Table structure for table `catalogo_cuentas`
 --
 
+DROP TABLE IF EXISTS `grupos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `grupos` (
+  `cod_grupo` int NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `tip_naturaleza` enum('acreedora','deudora') NOT NULL,
+  PRIMARY KEY (`cod_grupo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `grupos`
+--
+
+LOCK TABLES `grupos` WRITE;
+/*!40000 ALTER TABLE `grupos` DISABLE KEYS */;
+INSERT INTO `grupos` VALUES (1,'Activos','deudora'),(2,'Pasivos','acreedora'),(3,'Patrimonio','acreedora'),(4,'Ingresos','acreedora'),(5,'Gastos','deudora'),(6,'Costos','deudora');
+/*!40000 ALTER TABLE `grupos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
 DROP TABLE IF EXISTS `catalogo_cuentas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -41,36 +63,16 @@ CREATE TABLE `catalogo_cuentas` (
 -- Dumping data for table `catalogo_cuentas`
 --
 
-LOCK TABLES `catalogo_cuentas` WRITE;
-/*!40000 ALTER TABLE `catalogo_cuentas` DISABLE KEYS */;
-INSERT INTO `catalogo_cuentas` VALUES (1,'Activos',1,NULL,'2024-11-21 05:24:02',0),(2,'Pasivos',2,NULL,'2024-11-21 05:24:02',0),(3,'Patrimonio',3,NULL,'2024-11-21 05:24:02',0),(4,'Ingresos',4,NULL,'2024-11-21 05:24:02',0),(5,'Gastos',5,NULL,'2024-11-21 05:24:02',0),(6,'Costos',6,NULL,'2024-11-21 05:24:02',0);
-/*!40000 ALTER TABLE `catalogo_cuentas` ENABLE KEYS */;
-UNLOCK TABLES;
+
+
+
+
+
+
 
 --
 -- Table structure for table `grupos`
 --
-
-DROP TABLE IF EXISTS `grupos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `grupos` (
-  `cod_grupo` int NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `tip_naturaleza` enum('acreedora','deudora') NOT NULL,
-  PRIMARY KEY (`cod_grupo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `grupos`
---
-
-LOCK TABLES `grupos` WRITE;
-/*!40000 ALTER TABLE `grupos` DISABLE KEYS */;
-INSERT INTO `grupos` VALUES (1,'Activos','deudora'),(2,'Pasivos','acreedora'),(3,'Patrimonio','acreedora'),(4,'Ingresos','acreedora'),(5,'Gastos','deudora'),(6,'Costos','deudora');
-/*!40000 ALTER TABLE `grupos` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `movimientos_diarios`
