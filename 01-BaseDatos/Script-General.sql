@@ -62,14 +62,18 @@ BEGIN
 END;
 
 -- +++++++++++++++++++++ Libro Mayor
-SELECT  cc.cod_cuenta, cc.nombre, 
-		md.cod_movmaestro, md.fecha_movdia,
-		md.debe_movdia, md.haber_movdia 
+SELECT  cc.cod_cuenta codCuenta, cc.nombre nombreCuenta, 
+		md.cod_movmaestro codMovMaestro, md.fecha_movdia fechaMovdia,
+		md.debe_movdia debeMovDia, md.haber_movdia haberMovDia,
+		e.id idEstado, e.nombre estadoPartida 
 FROM movimientos_diarios md,
-	catalogo_cuentas cc 
+	 catalogo_cuentas cc,
+	 estados e
 WHERE md.cod_cuenta = cc.cod_cuenta 
 	 AND md.fecha_movdia >= :PFIni AND md.fecha_movdia <= :PFFin
-ORDER BY cc.cod_grupo, cc.cod_cuenta;
+	 AND md.id_estado = e.id
+	 AND md.cod_cuenta like '%%'
+ORDER BY cc.cod_grupo, cc.cod_cuenta, md.fecha_movdia;
 
 -- ++++++++++++++++++++++ Balanza de Comprobacion
 SELECT  cc.cod_cuenta, cc.nombre,
@@ -86,5 +90,6 @@ FROM movimientos_diarios md,
 	 catalogo_cuentas cc
 WHERE md.cod_cuenta = cc.cod_cuenta 
 	 AND md.fecha_movdia >= :PFIni AND md.fecha_movdia <= :PFFin
+	 AND md.id_estado = 3
 GROUP BY cc.cod_cuenta, cc.nombre
 ORDER BY cc.cod_grupo;
