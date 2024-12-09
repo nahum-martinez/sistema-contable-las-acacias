@@ -93,3 +93,21 @@ WHERE md.cod_cuenta = cc.cod_cuenta
 	 AND md.id_estado = 3
 GROUP BY cc.cod_cuenta, cc.nombre
 ORDER BY cc.cod_grupo;
+
+
+--- Auditoria de la DB
+SELECT * FROM information_schema.statistics WHERE table_schema = 'contabilidadvla';
+
+SHOW TABLE STATUS LIKE 'movimientos_diarios';
+
+TRUNCATE TABLE  movimientos_diarios;
+
+OPTIMIZE TABLE movimientos_diarios;
+
+ALTER TABLE movimientos_diarios AUTO_INCREMENT = 1;
+
+SELECT AUTO_INCREMENT FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'contabilidadvla' AND TABLE_NAME   = 'movimientos_diarios';
+
+select table_name, data_length, data_free from information_schema.tables where table_schema='contabilidadvla' order by data_free desc;
+
+select table_name, round(data_length/1024/1024), round(data_free/1024/1024) from information_schema.tables where table_schema='contabilidadvla' order by data_free desc;

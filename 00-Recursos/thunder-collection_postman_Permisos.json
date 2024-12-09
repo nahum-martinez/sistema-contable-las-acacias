@@ -1,0 +1,67 @@
+{
+    "info": {
+        "_postman_id": "c6121702-ac11-48fb-a137-fa2f5f110403",
+        "name": "Permisos",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "localhost:3000/api/v1/roles",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost:3000/api/v1/permisos",
+                    "path": [
+                        "api",
+                        "v1",
+                        "permisos"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"nombre\": \"rol4\",\n  \"url\": \"nombre de prueba\"\n}"
+                }
+            }
+        },
+        {
+            "name": "localhost:3000/api/v1/roles",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost:3000/api/v1/roles/1/id/permisos",
+                    "path": [
+                        "api",
+                        "v1",
+                        "roles",
+                        "1",
+                        "id",
+                        "permisos"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"crear\": false,\n  \"eliminar\": false,\n  \"actualizar\": false,\n  \"leer\": true,\n  \"id_pantalla\": \"6c973489-b4b2-11ef-ad30-0242ac120002\"\n}"
+                }
+            }
+        }
+    ]
+}

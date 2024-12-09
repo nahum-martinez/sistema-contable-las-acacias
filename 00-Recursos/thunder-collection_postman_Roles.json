@@ -1,0 +1,196 @@
+{
+    "info": {
+        "_postman_id": "ad66090d-23f6-4d60-9fd4-0f55226a64d5",
+        "name": "Roles",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "obtener roles",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost:3000/api/v1/roles",
+                    "path": [
+                        "api",
+                        "v1",
+                        "roles"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        },
+        {
+            "name": "crear rol",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost:3000/api/v1/roles",
+                    "path": [
+                        "api",
+                        "v1",
+                        "roles"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"nombre\": \"rol1\",\n  \"descripcion\": \"nombre de prueba\"\n}"
+                }
+            }
+        },
+        {
+            "name": "actualizar rol",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "localhost:3000/api/v1/roles/1",
+                    "path": [
+                        "api",
+                        "v1",
+                        "roles",
+                        "1"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"nombre\": \"Administradoxxxxxr\",\n  \"descripcion\": \"Administrador del sistema\"\n}"
+                }
+            }
+        },
+        {
+            "name": "ver roles y sus permisos, inner entre roles, pantallas y permisos",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost:3000/api/v1/roles/1/id/permisos",
+                    "path": [
+                        "api",
+                        "v1",
+                        "roles",
+                        "1",
+                        "id",
+                        "permisos"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        },
+        {
+            "name": "eliminar de tabla permisosxroles",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "localhost:3000/api/v1/roles/1/id/permisos/e7413925-b4d0-11ef-ad30-0242ac120002",
+                    "path": [
+                        "api",
+                        "v1",
+                        "roles",
+                        "1",
+                        "id",
+                        "permisos",
+                        "e7413925-b4d0-11ef-ad30-0242ac120002"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"crear\": false,\n  \"eliminar\": true,\n  \"actualizar\": true,\n  \"leer\": true,\n  \"id_pantalla\": \"6c973489-b4b2-11ef-ad30-0242ac120002\"\n}"
+                }
+            }
+        },
+        {
+            "name": "agregar un nuevo permisoxrol y pantalla",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost:3000/api/v1/roles/1/id/permisos",
+                    "path": [
+                        "api",
+                        "v1",
+                        "roles",
+                        "1",
+                        "id",
+                        "permisos"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"crear\": false,\n  \"eliminar\": true,\n  \"actualizar\": true,\n  \"leer\": true,\n  \"id_pantalla\": \"6c973489-b4b2-11ef-ad30-0242ac120002\"\n}"
+                }
+            }
+        },
+        {
+            "name": "actualizar el permiso del rol",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "localhost:3000/api/v1/roles/1/id/permisos/ed563a56-b4f4-11ef-aec3-0242ac120002",
+                    "path": [
+                        "api",
+                        "v1",
+                        "roles",
+                        "1",
+                        "id",
+                        "permisos",
+                        "ed563a56-b4f4-11ef-aec3-0242ac120002"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"crear\": false,\n  \"eliminar\": false,\n  \"actualizar\": true,\n  \"leer\": true,\n  \"id_pantalla\": \"6c973489-b4b2-11ef-ad30-0242ac120002\"\n}"
+                }
+            }
+        }
+    ]
+}

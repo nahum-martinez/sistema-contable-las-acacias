@@ -1,0 +1,64 @@
+{
+    "info": {
+        "_postman_id": "ded004cd-cad4-4a7b-b7a8-46e6e6789f88",
+        "name": "Pantallas",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "localhost:3000/api/v1/roles",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost:3000/api/v1/pantallas",
+                    "path": [
+                        "api",
+                        "v1",
+                        "pantallas"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"nombre\": \"rol4\",\n  \"descripcion\": \"nombre de prueba\"\n}"
+                }
+            }
+        },
+        {
+            "name": "localhost:3000/api/v1/roles",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost:3000/api/v1/pantallas",
+                    "path": [
+                        "api",
+                        "v1",
+                        "pantallas"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"nombre\": \"rol5\",\n  \"url\": \"nombre de prueba\"\n}"
+                }
+            }
+        }
+    ]
+}
